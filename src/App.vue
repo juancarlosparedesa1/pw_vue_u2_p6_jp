@@ -1,8 +1,10 @@
 <template>
   <img src="./assets/logo.png" alt="No existe">
-  <Contador titulo="Estudiante" />
+  <!--   <Contador titulo="Estudiante" :num="1" /> v-bind -->
+  <Contador titulo="Estudiante" :num="-1" />
+  <!--   <Contador titulo="Profesor" v-bind:num="5" /> v-bind -->
   <Contador titulo="Profesor" />
-  <Contador />
+  <Contador v-bind:num="calcularValor()" />
 </template>
 
 <script>
@@ -12,6 +14,11 @@ export default {
   name: 'App',
   components: {
     Contador
+  },
+  methods: {
+    calcularValor() {
+      return 10 + 2;
+    }
   }
 }
 </script>

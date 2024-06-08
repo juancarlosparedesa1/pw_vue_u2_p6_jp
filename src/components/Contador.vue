@@ -9,10 +9,25 @@
    
 <script>
 export default {
-    props: ['titulo', 'num'],
+    //props: ['titulo', 'num'], PRIMERA FORMA DE DECLARAR PROPS(BÁSICA)
+    props: {
+        titulo: String,
+        num: {
+            type: Number,
+            required: false,
+            default: 10,
+            //default:10 es por si no tiene, pero no tiene coherencia
+            //required: false advertencia en la consola
+            validator(value) {
+                //programación de validación
+                //return booleano
+                return value > 0;
+            }
+        }
+    },
     data() {
         return {
-            numero: 5
+            numero: this.num,
         }
     },
     methods: {
