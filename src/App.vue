@@ -5,6 +5,7 @@
   <!--   <Contador titulo="Profesor" v-bind:num="5" /> v-bind -->
   <Contador titulo="Profesor" />
   <Contador v-bind:num="calcularValor()" />
+  <!-- commit -->
 </template>
 
 <script>
